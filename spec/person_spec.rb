@@ -29,4 +29,17 @@ describe Person do
 		person.rent_bike_from(station)
 		expect(person).to have_bike
 	end
+
+	it 'can return a bike to a station' do
+		station = double :station
+		expect(station).to receive(:receive_bike)
+		person.return_bike_to station
+	end
+
+		it 'no longer has a bike after returning one to a station' do
+		person = Person.new(:bike)
+		station = double :station, receive_bike: :bike
+		person.return_bike_to(station)
+		expect(person).not_to have_bike
+	end
 end
