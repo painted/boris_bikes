@@ -38,7 +38,7 @@ describe Person do
 
 		it 'no longer has a bike after returning one to a station' do
 		person = Person.new(:bike)
-		station = double :station, receive_bike: :bike
+		station = double :station, receive_bike: :bike 
 		person.return_bike_to(station)
 		expect(person).not_to have_bike
 	end
