@@ -1,6 +1,6 @@
 # load BikeContainer
 require_relative 'bike_container'
-
+require 'debugger'
 class Van
 
 	# this gives us all the mthods that used to be in this 
@@ -15,4 +15,9 @@ class Van
 		self.capacity = options.fetch(:capacity, capacity)
 	end
 
+	def pickup_bad_bikes_from(station)
+		# broken_bikes = station.release_bad_bikes
+		# bikes.concat broken_bikes
+		bikes.concat(station.release_bad_bikes)
+	end
 end

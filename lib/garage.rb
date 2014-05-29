@@ -15,4 +15,5 @@ class Garage
 		self.capacity = options.fetch(:capacity, capacity)
 	end
 
+
 end
